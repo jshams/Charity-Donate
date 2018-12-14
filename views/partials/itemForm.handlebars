@@ -1,0 +1,8 @@
+{{#if listItem}}
+<form action="/listitems/{{listItem._id}}?_method=PUT "method="POST">
+{{else}}
+<form action="/listitems/new/" method="POST">
+{{/if}}
+  <input type="text" name="text" value="{{listItem.text}}">
+  <button type="submit">Submit</button>
+</form>
