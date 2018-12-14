@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// mongoose.connect('mongodb://localhost/to-do-list', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/charity-donate', {useNewUrlParser: true});
 
 
 const CharityProject = new Schema({

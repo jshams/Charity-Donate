@@ -14,7 +14,8 @@
     - Description
     - funding Goal
     - funding Progress
-- [ ] - Set up database
+- [X] Set up database
+- [X] Create a .gitignore from www.gitignore.io 
 - [ ] Create index route'
 - [ ] Create new charity project route
 - [ ] Create new charity project form
