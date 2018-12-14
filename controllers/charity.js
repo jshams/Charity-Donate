@@ -41,8 +41,34 @@ module.exports = function (app) {
     app.get('/charity/:charityId', (req, res) => {
       Charity.findById(req.params.charityId).then(charity => {
         res.render('charity', {charity})
-      })
-    })
+      });
+    });
+
+      //get edit form
+    app.get('/charity/:charityId/edit', (req, res) => {
+      Charity.findById(req.params.charityId).then(charity => {
+        res.render('charity-edit', {charity})
+      });
+    });
+
+      //updates charity
+    app.post('/charity/:charityId/edit', (req, res) => {
+      Charity.findById(req.params.charityId)
+      .then(charity => {
+        console.log("charity we're editing:", charity);
+        charity.name = req.body.name;
+        charity.description = req.body.description;
+        charity.totalFundingGoal = req.body.totalFundingGoal;
+        charity.save().then(() => {
+          res.redirect('/charity/'+charity._id)
+        }).catch((err) => {
+          console.log(err);
+        })
+      });
+    });
+
+
+
 
     app.get('/listitems/:itemId/Update', (req, res) => {
       //get specific list item
@@ -50,6 +76,15 @@ module.exports = function (app) {
         res.render('itemUpdate', {listItem: item});
       });
     });
+
+    app.get('/listitems/:itemId/Update', (req, res) => {
+      //get specific list item
+      listItem.findById(req.params.itemId).then(item => {
+        res.render('itemUpdate', {listItem: item});
+      });
+    });
+
+
     app.put('/listitems/:itemId', (req, res)=> {
       //Updates specific item
       listItem.findByIdAndUpdate(req.params.itemId, req.body).then(result => {
