@@ -2,7 +2,7 @@
 
 ## TO DO's
 
-- [ ] - Create a route to edit the charity information. Route: /charity/:charityId/edit and then find the charity by its id just like you did before, and then render an edit form and basically like we created the Charity, except ur gonna advance mongo query findByIdAndUpdate then update it's fields with the req body . names 
+- [X] - Create a route to edit the charity information. Route: /charity/:charityId/edit and then find the charity by its id just like you did before, and then render an edit form and basically like we created the Charity, except ur gonna advance mongo query findByIdAndUpdate then update it's fields with the req body . names
 - [X] Wrap the charity name on index route with an a tag that has a href of /charity/{{this._ id }}
 - [X] Create get route for /charity/:charityId
         - within this route, Charity.findById(req.params.:charityId).then((charity) => res render (charity-page)) - and pass in the charity object to render with the page.

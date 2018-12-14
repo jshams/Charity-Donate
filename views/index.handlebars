@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row">
         <div class="col-md-12 center centered">
-          <h1>Choose what you want to donate. Donations made transparent by your charity.</h1>
-          <h2>Current Charities:</h2>
-          <ul>
+          <h1>Welcome to Charity Donate</h1>
+          <h2>Here are our Charities:</h2>
+          <ul style="list-style: none;">
             {{#each charity}}
               <!-- put a tag in list item-->
-              <li><a href="/charities/{{this._id}}">{{this.name}}</a></li>
+              <li class="charity-li"><a href="/charities/{{this._id}}">{{this.name}}</a><p>{{this.description}}</p></li>
 
             {{/each}}
           </ul>

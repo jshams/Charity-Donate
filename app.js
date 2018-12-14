@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-
+const path = require('path');
 // solves heroku error
 const port = process.env.PORT || 5000;
 // database connection here instead of it's own data folder.
@@ -14,7 +14,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-
+app.use(express.static(path.join(__dirname, 'public')));
 const charity = require('./controllers/charity');
 // const category = require('./controllers/category');
 

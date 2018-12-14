@@ -1,0 +1,81 @@
+html {
+  background-color: #007bff;
+  height: 100vh;
+}
+
+main {
+  background-color: #007bff;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-weight: 100;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+
+.charity-li {
+    color: black;
+    font-size: 20px;
+    /* border: ridge; */
+    padding: 20px;
+    margin: 10px;
+    /* border-radius: 10px; */
+    background-color: #efefef;
+  }
+
+ul {
+  style: none;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    font-weight: bold;
+}
+form {
+  background-color: #007bff;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+}
+
+.delete {
+  background-color: #E33E1B;
+  border-radius: 5px;
+}
+
+.comment {
+    float: right;
+}
+
+.edit-charity {
+  color: black;
+}
+
+.donate {
+  background-color: white;
+  float: right;
+  margin: 20px;
+  margin-right: 50px;
+  border-radius: 5px;
+  padding: 5px;
+}
