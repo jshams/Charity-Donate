@@ -9,19 +9,7 @@ module.exports = function (app) {
         console.log(charity);
         res.render('index', {charity});
       })
-      // listItem.find({}).then(items => {
-      //   res.render('index', { items });
-      //   console.log("items:", items)
-      // });
     });
-    ///Returns specific todo item with comments at GET: /listitems/:id
-    // app.get('/listitems/:id', (req, res) => {
-    //   listItem.findById(req.params.id).populate('comments').then(listItem => {
-    //     res.render('item.handlebars', { listItem })
-    //   }).catch(err => {
-    //     console.log(err);
-    //   })
-    // })
 
 
     app.get('/new', (req, res) => {
@@ -38,21 +26,22 @@ module.exports = function (app) {
       })
     });
 
-    app.get('/charity/:charityId', (req, res) => {
-      Charity.findById(req.params.charityId).then(charity => {
-        res.render('charity', {charity})
+    app.get('/charities/:charityId', (req, res) => {
+      Charity.findById(req.params.charityId).populate('comments').then(charity => {
+        console.log(charity);
+        res.render('charity', {charity});
       });
     });
 
       //get edit form
-    app.get('/charity/:charityId/edit', (req, res) => {
+    app.get('/charities/:charityId/edit', (req, res) => {
       Charity.findById(req.params.charityId).then(charity => {
         res.render('charity-edit', {charity})
       });
     });
 
       //updates charity
-    app.post('/charity/:charityId/edit', (req, res) => {
+    app.patch('/charities/:charityId/', (req, res) => {
       Charity.findById(req.params.charityId)
       .then(charity => {
         console.log("charity we're editing:", charity);
@@ -60,41 +49,21 @@ module.exports = function (app) {
         charity.description = req.body.description;
         charity.totalFundingGoal = req.body.totalFundingGoal;
         charity.save().then(() => {
-          res.redirect('/charity/'+charity._id)
+          res.redirect('/charities/'+charity._id)
         }).catch((err) => {
           console.log(err);
         })
       });
     });
 
-
-
-
-    app.get('/listitems/:itemId/Update', (req, res) => {
-      //get specific list item
-      listItem.findById(req.params.itemId).then(item => {
-        res.render('itemUpdate', {listItem: item});
-      });
-    });
-
-    app.get('/listitems/:itemId/Update', (req, res) => {
-      //get specific list item
-      listItem.findById(req.params.itemId).then(item => {
-        res.render('itemUpdate', {listItem: item});
-      });
+    app.delete('/charities/:charityId/', (req, res) => {
+       Charity.findByIdAndRemove(req.params.charityId).then((charity) => {
+         res.redirect('/');
+       }).catch((err) =>{
+         console.log(err)
+       });
     });
 
 
-    app.put('/listitems/:itemId', (req, res)=> {
-      //Updates specific item
-      listItem.findByIdAndUpdate(req.params.itemId, req.body).then(result => {
-        res.redirect('/');
-      });
-    });
-    app.delete('/listitems/:itemId', (req, res) => {
-      //deletes specific listitem
-      listItem.findByIdAndRemove(req.params.itemId).then(result => {
-        res.redirect('/');
-      }).catch(console.error);
-    });
+
 }

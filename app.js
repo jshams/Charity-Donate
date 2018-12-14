@@ -20,6 +20,7 @@ const charity = require('./controllers/charity');
 
 // setup controllers
 charity(app);
+require('./controllers/comments')(app);
 // category(app);
 
-app.listen(5000, console.log('listening on port 5000!'))
+app.listen(port, console.log('listening on port 5000!'))

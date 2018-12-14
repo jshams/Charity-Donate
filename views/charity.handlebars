@@ -5,7 +5,23 @@
         <h1>{{charity.name}}</h1>
         <h3>Funding Goal: {{charity.totalFundingGoal}}</h3>
         <p>{{charity.description}}</p>
-        <p><a href="/charity/{{charity._id}}/edit">Edit</a></p>
+        <p><a href="/charities/{{charity._id}}/edit">Edit</a></p>
+        <form class="" action="/charities/{{charity._id}}?_method=DELETE" method="post">
+            <button type="submit">Delete</button>
+        </form>
+        <ul class="list-group">
+        {{#each charity.comments}}
+          <li class="list-group-item">
+            <h5>{{this.author}}:</h5>
+            <p>{{this.content}}</p>
+            <a href="/charities/{{../charity._id}}/comments/{{this._id}}/update">Edit</a>
+            <form action="/charities/{{../charity._id}}/comments/{{this._id}}?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+            </form>
+          </li>
+        {{/each}}
+        </ul>
+        <a href="/charities/{{charity._id}}/comments/new" class="btn btn-primary">Create Comment</a>
       </div>
     </div>
   </div>

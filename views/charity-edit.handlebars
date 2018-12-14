@@ -1,7 +1,7 @@
 <main>
   <div class="container">
     <div class="row">
-        <form class="" action="/charity/{{charity._id}}/edit" method="post">
+        <form class="" action="/charities/{{charity._id}}?_method=PATCH" method="post">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" placeholder="name" value="{{charity.name}}">
