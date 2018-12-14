@@ -3,6 +3,12 @@
     <div class="row">
         <div class="col-md-12 center centered">
           <h1>Choose what you want to donate. Donations made transparent by your charity.</h1>
+          <h2>Current Charities:</h2>
+          <ul>
+            {{#each charity}}
+              <li>{{this.name}}</li>
+            {{/each}}
+          </ul>
         </div>
     </div>
   </div>

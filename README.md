@@ -18,8 +18,10 @@
 - [X] Create a .gitignore from www.gitignore.io
 - [X] Create index route
 - [X] Create basic index view
-- [ ] Create new charity project route
-- [ ] Create new charity project form
+- [X] Create new charity project route
+- [X] Create new charity project form
+- [X] Updated index route to show Charities
+
 
 *********Scoping the Bare Minimal Viable Product for my Contractor Project in BEW 1.1.*********
 Let's create 2 resources. 1 for Charities and 1 for the Categories.
