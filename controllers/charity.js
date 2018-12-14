@@ -23,6 +23,7 @@ module.exports = function (app) {
     //   })
     // })
 
+
     app.get('/new', (req, res) => {
       res.render('new');
     });
@@ -36,6 +37,12 @@ module.exports = function (app) {
         console.log(err);
       })
     });
+
+    app.get('/charity/:charityId', (req, res) => {
+      Charity.findById(req.params.charityId).then(charity => {
+        res.render('charity', {charity})
+      })
+    })
 
     app.get('/listitems/:itemId/Update', (req, res) => {
       //get specific list item

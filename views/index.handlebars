@@ -6,7 +6,9 @@
           <h2>Current Charities:</h2>
           <ul>
             {{#each charity}}
-              <li>{{this.name}}</li>
+              <!-- put a tag in list item-->
+              <li><a href="/charity/{{this._id}}">{{this.name}}</a></li>
+
             {{/each}}
           </ul>
         </div>

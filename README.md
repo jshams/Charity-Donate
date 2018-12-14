@@ -1,6 +1,13 @@
 # Jake's Charity  Mongo Node app
 
 ## TO DO's
+
+
+- [X] - Wrap the charity name on index route with an a tag that has a href of /charity/{{this._ id }}
+- [X] - Create get route for /charity/:charityId
+        - within this route, Charity.findById(req.params.:charityId).then((charity) => res render (charity-page)) - and pass in the charity object to render with the page.
+- [X] - Create a charity handlebars view basic that shows it's info, you can acces its info with dynamic var with dot noation.
+
 - [X] Add bootstrap
 - [X] Create bootstrap navbar
 - [X] Create CharityProject Model
@@ -21,6 +28,7 @@
 - [X] Create new charity project route
 - [X] Create new charity project form
 - [X] Updated index route to show Charities
+
 
 
 *********Scoping the Bare Minimal Viable Product for my Contractor Project in BEW 1.1.*********
