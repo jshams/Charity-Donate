@@ -1,12 +1,22 @@
-{{> itemForm}}
-{{#each items}}
-<div class="item">
-  <h3>{{this.text}}</h3>
-  <form action="/listitems/{{this._id}}?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-  </form>
-  <form action="/listitems/{{this._id}}/update" method="GET">
-    <button type="submit">Edit</button>
-  </form>
-</div>
-{{/each}}
+<main>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12 center centered">
+          <h1>Choose what you want to donate. Donations made transparent by your charity.</h1>
+        </div>
+    </div>
+  </div>
+  <!-- {{> itemForm}}
+  {{#each items}}
+  <div class="item">
+    <h3>{{this.text}}</h3>
+    <form action="/listitems/{{this._id}}?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+    <form action="/listitems/{{this._id}}/update" method="GET">
+      <button type="submit">Edit</button>
+    </form>
+  </div>
+  {{/each}} -->
+
+</main>

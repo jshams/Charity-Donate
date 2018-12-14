@@ -1,12 +1,14 @@
-const listItem = require('../models/listItem')
+const charity = require('../models/charityProject')
 
 module.exports = function (app) {
 
     app.get('/', (req, res) => {
-        listItem.find({}).then(items => {
-          res.render('index', { items });
-          console.log("items:", items)
-        });
+      // later: find all post and render index view passing in posts
+      res.render('index');
+      // listItem.find({}).then(items => {
+      //   res.render('index', { items });
+      //   console.log("items:", items)
+      // });
     });
     ///Returns specific todo item with comments at GET: /listitems/:id
     app.get('/listitems/:id', (req, res) => {
